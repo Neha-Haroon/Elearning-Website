@@ -1,0 +1,784 @@
+/* to remove what we dont want. for all styling to be gone*/
+/* DEFAULT STYLINGS START */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* css variable to easily customise webpage and prevent from repeating ourselves */
+:root {
+    /* COLORS */
+    --color-primary: #5c52e6;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg2: #2e3267;
+    --color-bg1: #424890;
+
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+
+    /* SCREEN SIZES */
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    /* TRANSITION STANDARD */
+    --transition: all 400ms ease;
+
+    /*  */
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    /*  */
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    /*  */
+    --box-shadow: 0 2rem 3rem var(var(--color-light))
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--color-white);
+    background-color: var(--color-bg);
+    transition: .4s;
+
+    /*For animation dark mode*/
+}
+
+/* is going to be a class for many sections for the template help center everything horizontally */
+.container {
+    width: var(--container-width-lg);
+    margin: 1rem auto;
+    padding: 5rem auto;
+    /* transition: .4s; */
+    animation: initialLoadingAnimation 400ms linear upwards;
+    transform-origin: bottom;
+    /* for middle of screen*/
+
+}
+
+.container:n section {
+    /* to give every section tag tb lr */
+    /* 6rem = 6 x (1 rem = 16 px ) */
+    padding: 6rem 0;
+    margin: 3rem 0;
+}
+
+section {
+    margin: 5rem auto;
+}
+
+section h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+a {
+    color: var(--color-white);
+}
+
+img {
+    width: 100%;
+    /*  its parents width */
+    display: block;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    /* medium */
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-primary {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+body.dark-theme {
+    --color-primary: #6c63ff;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: #rgba(247, 88, 66, 0.4);
+    --color-bg2: #fff;
+    --color-dark: #rgba(255, 255, 255, 0.7);
+    --color-light: #000;
+    --color-bg1: #1f2641;
+    --color-bg: #2e3267;
+    --color-white: #424890;
+
+}
+
+/* DEFAULT STYLINGS ENDS */
+/* =========================  NAVBAR START ========================= */
+nav {
+    background-color: transparent;
+    width: 100vw;
+    /*vw =  viewport width means the entire width of the screen, no matter the device takes entire screen*/
+    height: 5rem;
+    position: fixed;
+    /* so even if we scroll, the nav bar is on display */
+    top: 0;
+    /* so it is alwaysi= going to be at the top */
+    z-index: 11;
+    /* so its always on top of everything on the page */
+}
+
+/* change navbar styles on scroll using javascript */
+.window-scroll {
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.nav__container {
+    height: 100%;
+    /* of the parent */
+    display: flex;
+    justify-content: space-between;
+    /* distirbuted equally on horizontal scale */
+    align-items: center;
+    /* placed in the center vertically on the navbar width */
+}
+
+nav button {
+    display: none;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* so the li are not listed vertically but horizontally */
+    gap: 4rem;
+    padding-bottom: 2rem;
+}
+
+.nav__menu a {
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav__menu a:hover {
+    color: var(--color-bg2);
+}
+
+.active {
+    color: antiquewhite;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-decoration: overline;
+}
+
+/* =========================  NAVBAR END ========================= */
+/* =========================  HEADER START ========================= */
+header {
+    position: relative;
+    top: 5rem;
+    /* remember we gave our nav bar height of 5rem so it will come straight after that */
+    overflow: hidden;
+    /* so if content exceeds height it will be hidden */
+    height: 70vh;
+    margin-bottom: 5rem;
+}
+
+.header__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* split the grid into 2 equal columns */
+    align-items: center;
+    /* so the text and img are align in the center of grid , not line one is going up one down*/
+    gap: 5rem;
+    /* space between the text and img */
+    height: 100%;
+}
+
+.header__left p {
+    margin: 1rem 0 2.4rem;
+    /* top leftright bottm */
+}
+
+/* =========================  HEADER END ========================= */
+/* =========================  CATEGORIES START ========================= */
+.categories {
+    background-color: var(--color-bg1);
+    height: 32rem;
+}
+
+.categories h1 {
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.categories__container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.categories__left {
+    margin-right: 4rem;
+}
+
+.categories__left p {
+    margin: 1rem 0 3rem;
+}
+
+.categories__right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns created till end of content */
+    gap: 1.2rem;
+}
+
+.category {
+    background-color: var(--color-bg2);
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+.category:hover {
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+    /* x axis y axis blur color 30% transparency*/
+    z-index: 1;
+}
+
+/* pesudo selector */
+.category:nth-child(2) .category__icon {
+    background: var(--color-danger);
+}
+
+.category:nth-child(3) .category__icon {
+    background: var(--color-success);
+}
+
+.category:nth-child(4) .category__icon {
+    background: var(--color-warning);
+}
+
+.category:nth-child(5) .category__icon {
+    background: var(--color-success);
+}
+
+.category__icon {
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+.category h5 {
+    margin: 2rem 0 1rem;
+}
+
+.category p {
+    font-size: 0.85rem;
+}
+
+/* =========================  CATEGORIES END ========================= */
+/* =========================  POPULAR COURSE START ========================= */
+.courses {
+    margin-top: 5rem;
+    /* for spacing above */
+}
+
+.courses__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.course {
+    background: var(--color-bg1);
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.course:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.course__info {
+    padding: 2rem;
+}
+
+.course__info p {
+    margin: 1.2rem 0 2rem;
+    font-size: 0.9rem;
+}
+
+/* =========================  POPULAR COURSE END ========================= */
+/* =========================  FAQ START ========================= */
+.faqs {
+    background: var(--color-bg1);
+    box-shadow: inset 0 3rem 3rem rgba(0, 0, 0, 0.5);
+    /* to add shadow on this container */
+}
+
+.faqs__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.faq {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    height: fit-content;
+    background: var(--color-primary);
+    cursor: pointer;
+}
+
+.faq h4 {
+    font-size: 1rem;
+    line-height: 2.2;
+}
+
+.faq__icon {
+    align-self: flex-start;
+    /* put icon on top left corner */
+    font-size: 1.2rem;
+}
+
+.faq p {
+    margin-top: 0.8rem;
+    display: none;
+    /* dont show answer in p unless opened   */
+}
+
+/* faq toggle */
+.faq.open p {
+    display: block;
+    /* show faq answer when opened handled with js */
+}
+
+/* =========================  FAQ END ========================= */
+/* =========================  TESTIMONIAL START ========================= */
+.Recommendations__container {
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 5rem;
+    cursor: pointer;
+}
+
+.testimonial {
+    padding-top: 2rem;
+}
+
+.avatar {
+    width: 6rem;
+    height: 6rem;
+    /* to make it circle not over */
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 1rem solid var(--color-bg1);
+}
+
+.testimonial__body {
+    background: var(--color-primary);
+    padding: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    /* for the triangle we want its postion abolute so its parents positon should be relative */
+}
+
+.testimonial__body::before {
+    /* pseudo element */
+    content: "";
+    display: block;
+    /* background: var(--color-primary); */
+    background: linear-gradient(135deg, transparent, var(--color-primary), var(--color-primary), var(--color-primary));
+    /* start from top,    should be transparent first then middle and end prppimary color width: 3rem; */
+
+    width: 3rem;
+    height: 3rem;
+    /* to make it square */
+    position: absolute;
+    /* so that it does not moves and is fixed on top of parent */
+    left: 50%;
+    /* mark it center */
+    top: -1.5rem;
+    /* half of margin top and shifter up */
+    transform: rotate(45deg);
+    /* to display diamound not square */
+
+}
+
+.swiper-wrapper {
+    padding-bottom: 5rem;
+}
+
+/* =========================  TESTIMONIAL END ========================= */
+/* =========================  FOOTER START ========================= */
+footer {
+    background: var(--color-bg1);
+    padding-top: 5rem;
+    font-size: 0.9rem;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+}
+
+.footer__contaner>div h4 {
+    margin-bottom: 1.2rem;
+}
+
+.footer__1 p {
+    margin: 0 0 2rem;
+}
+
+footer ul li {
+    margin-bottom: 0.7rem;
+}
+
+footer ul li :hover {
+    text-decoration: underline;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    /* tb lr */
+    border-top: 1px solid var(--color-bg2);
+}
+
+/* =========================  FOOTER END ========================= */
+/* =========================  MEDIA QUERIES (TABLETS) START ========================= */
+@media screen and (max-width:1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    /* ============= NAVBAR ============= */
+    nav button {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        cursor: pointer;
+
+    }
+
+    nav button#close-menu-btn {
+        display: none;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        /* medium screen is 90 % margin on both side is 5% so to stick to right means 5% */
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+        /* so the nav menu is not going to be showed unless the icon is clicked which requests the event listner to show menu */
+    }
+
+    .nav__menu li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavItems 400ms linear forwards;
+        /* called the keyframe to be added ,
+          animate in  1sec, animate linearly,
+           and forwards means end at the mark end which is 100% in our case */
+        /* if only animation property was added it was spinnning from the center to control where the spinning should start from is controled by transfrom origin */
+        transform-origin: top right;
+        opacity: 0;
+        /* no opacity */
+    }
+
+    .nav__menu li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+
+    .nav__menu li:nth-child(3) {
+        animation-delay: 300ms;
+    }
+
+    .nav__menu li:nth-child(4) {
+        animation-delay: 400ms;
+    }
+
+    /* is like a function created which can be called in animation property */
+    @keyframes animateNavItems {
+
+        /* transform the animation from 0% to 100% */
+        /* i want to spin them from left to right */
+        /*start from */
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+
+        /* end to */
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+            /* full opacity */
+        }
+    }
+
+    .nav__menu li a {
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.8);
+
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li :hover {
+        background: var(--color-bg2);
+        color: var(--color-white);
+    }
+
+    /* ============= HEADER ============= */
+    header {
+        height: 52vh;
+        margin-bottom: 4rem;
+    }
+
+    .header__container {
+        gap: 0;
+        padding-bottom: 3rem;
+    }
+
+    /* ============= CATEGORY ============= */
+    .categories {
+        height: auto;
+    }
+
+    .categories__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .categories__left {
+        margin-right: 0;
+    }
+
+    /* ============= POPULAR COURSES ============= */
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* ============= FAQS ============= */
+    .faqs__container {
+        grid-template-columns: 1fr;
+
+    }
+
+    .faq {
+        padding: 1.5rem;
+    }
+
+    /* ============= FOOTER ============= */
+    .footer__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@keyframes initialLoadingAnimation {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 200px;
+        transform: scale(2);
+    }
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+    position: fixed;
+    right: 3rem;
+    bottom: 7.5rem;
+    background-color: var(--color-primary);
+    box-shadow: 0 8px 12px hsla(220, 18%, 45%, .15);
+    display: inline-flex;
+    padding: .35rem;
+    color: var(--color-warning);
+    font-size: 2.1rem;
+    z-index: var(--z-tooltip);
+    transition: .3s;
+}
+
+/* Show Scroll Up*/
+.show-scroll {
+    bottom: 7.5rem;
+}
+
+.scrollup:hover {
+    transform: translateY(-.25rem);
+}
+
+/* =============================================== BREAKPOINTS ============================================ */
+
+/* =========================  MEDIA QUERIES (TABLETS) END ========================= */
+/* =========================  MEDIA QUERIES (PHONES) START ========================= */
+@media screen and (max-width:600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    /* ============= NAVBAR ============= */
+    .nav__menu {
+        right: 3%;
+        /* as small screen size is 94% leaving only 6% to be evenly distributed on both sides */
+    }
+
+    /* ============= HEADER ============= */
+    header {
+        height: 100vh;
+    }
+
+    .header__container {
+        grid-template-columns: 1fr;
+    }
+
+    .header__left p {
+        margin-bottom: 1.3rem;
+    }
+
+    /* ============= CATEGORY ============= */
+    .categories__right {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .category {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .category__icon {
+        margin-top: 4px;
+        display: inline-block;
+    }
+
+    /* ============= POPULAR COURSES ============= */
+    .courses__container {
+        grid-template-columns: 1fr;
+    }
+
+    /* ============= Recommendations ============= */
+    .testimonial__body {
+        padding: 1.2rem;
+    }
+
+    /* ============= FOOTER ============= */
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer__1 {
+        margin: 1rem auto;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+}
+
+/* =========================  MEDIA QUERIES (PHONES) END ========================= */
+/* =========================  FOOTER START ========================= */
+/* =========================  FOOTERS END ========================= */
+/* =========================  FOOTER START ========================= */
+/* =========================  FOOTERS END ========================= */
+/* =========================  FOOTER START ========================= */
+/* =========================  FOOTERS END ========================= */

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- ICONSCOUT CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- GOOGLE FONTS (MONTSERRAT) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/adminDashboard.css">
+    <style>
+        body {
+            background-image: url("./images/bg-texture.png");
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======================  NAV BAR START ====================== -->
+    <nav>
+        <div class="container nav__container">
+            <a href="index.html">
+                <h4>Logo</h4>
+            </a>
+            <ul class="nav__menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+    <!-- ======================  NAV BAR END ====================== -->
+    <!-- ======================  CONTACT FORM START ====================== -->
+
+    <div class="containeer">
+        <aside>
+            <!-- <div class="top">
+                <img src="./images/logo.png" alt="">
+                <h2>Lo <span class="danger">go</span> </h2>
+            </div> -->
+            <div class="close" id="close-btn">
+                <i class="uil uil-multiply"></i>
+            </div>
+
+            <!-- ================================ SIDE BAR START ============================= -->
+            <div class="sidebar">
+                <!-- LINK 1 -->
+                <a href="#" class="active">
+                    <!-- icon -->
+                    <i class="uil uil-th"></i>
+                    <h3 class=".dashboard">Dashboard</h3>
+                </a>
+
+                <!-- LINK 2 -->
+                <a href="#">
+                    <!-- icon -->
+                    <i class="uil uil-books"></i>
+                    <h3>Courses</h3>
+                    <span class="notificaton-count">5</span>
+                </a>
+
+                <!-- LINK 3 -->
+                <a href="#">
+                    <!-- icon -->
+                    <i class="uil uil-user"></i>
+                    <h3>Students</h3>
+                </a>
+
+                <!-- LINK 4 -->
+                <a href="#">
+                    <!-- icon -->
+                    <i class="uil uil-graduation-cap"></i>
+                    <h3>Teachers</h3>
+                </a>
+
+                <!-- LINK 4 -->
+                <a href="#">
+                    <!-- icon -->
+                    <i class="uil uil-chart-line"></i>
+                    <h3>Analytics</h3>
+                    <span class="notificaton-count">14</span>
+
+                </a>
+
+                <!-- LINK 7 -->
+                <a href="#">
+
+                    <!-- icon -->
+                    <i class="uil uil-setting"></i>
+                    <h3>Settings</h3>
+                </a>
+                <!-- LINK 8 -->
+                <a href="#">
+                    <i class="uil uil-info-circle"></i>
+                    <h3>Report</h3>
+                </a>
+
+                <!-- LINK 9 -->
+                <a href="#">
+                    <!-- icon -->
+                    <i class="uil uil-plus"></i>
+                    <h3>Add Course</h3>
+                </a>
+
+                <!-- LINK 10 -->
+                <a href="#">
+                    <i class="uil uil-signout"></i>
+                    <h3>Logout</h3>
+                </a>
+
+
+            </div>
+        </aside>
+
+        <!-- ================================ SIDE BAR END ============================= -->
+        <!-- ================================ MAIN START ============================= -->
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date"><input type="date"></div>
+
+            <!-- INSIGHTS DIV START -->
+            <div class="insights">
+                <!-- INSIGHT 1 -->
+                <div class="sales">
+                    <!-- icon -->
+                    <i class="uil uil-chart-bar"></i>
+
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total sales</h3>
+                            <h1>$23,000</h1>
+
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>77%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hrs</small>
+                </div>
+
+                <!-- INSIGHT 2 -->
+                <div class="expenses">
+                    <!-- icon -->
+                    <i class="uil uil-comparison"></i>
+
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>$23,000</h1>
+
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>77%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hrs</small>
+                </div>
+
+                <!-- INSIGHT 3 -->
+                <div class="income">
+                    <!-- icon -->
+                    <i class="uil uil-panel-add"></i>
+
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Income</h3>
+                            <h1>$23,000</h1>
+
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>77%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hrs</small>
+                </div>
+            </div><!-- INSIGHTS DIV eND -->
+            <div class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Course ID</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                            <td>Resposive Social media Website UI Design </td>
+                            <td>101 </td>
+                            <td>$11 </td>
+                            <td class="success">Active </td>
+                            <td>Details</td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr>
+                            <td>Resposive Social media Website UI Design </td>
+                            <td>101 </td>
+                            <td>$11 </td>
+                            <td class="success">Active </td>
+                            <td>Details</td>
+                        </tr>
+                        <!-- row 3 -->
+                        <tr>
+                            <td>Resposive Social media Website UI Design </td>
+                            <td>101 </td>
+                            <td>$11 </td>
+                            <td class="warning">Pending </td>
+                            <td>Details</td>
+                        </tr><!-- row 4 -->
+                        <tr>
+                            <td>Resposive Social media Website UI Design </td>
+                            <td>101 </td>
+                            <td>$11 </td>
+                            <td class="success">Active </td>
+                            <td>Details</td>
+                        </tr>
+                        <!-- row 5 -->
+                        <tr>
+                            <td>Resposive Social media Website UI Design </td>
+                            <td>101 </td>
+                            <td>$11 </td>
+                            <td class="danger">Not Active </td>
+                            <td>Details</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+        </main>
+
+        <!-- ============== RIGHT START============== -->
+        <div class="right">
+
+            <!-- ============== TOP START============== -->
+            <div class="top">
+                <div class="theme-toggler">
+
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Neha</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/avatar1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- ============== TOP END============== -->
+            <!-- ============== RECENT UPDATES START============== -->
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+                <div class="updates">
+                    <!-- UPDATE 1 -->
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/avatar4.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Frank</b> uploaded new video to course</p>
+                            <small class="text-muted"> 15 Minutes Ago</small>
+                        </div>
+                    </div>
+
+                    <!-- UPDATE 2 -->
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/avatar2.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Frank</b> uploaded new video to course</p>
+                            <small class="text-muted"> 15 Minutes Ago</small>
+                        </div>
+                    </div>
+
+                    <!-- UPDATE 3 -->
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/avatar3.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Frank</b> uploaded new video to course</p>
+                            <small class="text-muted"> 15 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============== RECENT UPDATES END============== -->
+            <!-- ============== ENROLLS ANALYTICS START ============== -->
+            <div class="enrolls-analytics">
+                <h2>Enrolls Analytics</h2>
+
+                <!-- ANALYTICS 1 -->
+                <div class="item online">
+                    <div class="icon">
+                        <!-- icon -->
+                        <i class="uil uil-book-reader"></i>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>ONLINE USERS</h3>
+                            <small class="text-muted">Last 24 Hrs</small>
+                        </div>
+                        <h5 class="success">+38%</h5>
+                        <h3>2212</h3>
+
+                    </div>
+                </div>
+                <!-- ANALYTICS 2 -->
+                <div class="item offline">
+                    <div class="icon">
+                        <!-- icon -->
+                        <i class="uil uil-graduation-cap"></i>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>ONLINE USERS</h3>
+                            <small class="text-muted">Last 24 Hrs</small>
+                        </div>
+                        <h5 class="success">+38%</h5>
+                        <h3>2212</h3>
+
+                    </div>
+                </div>
+                <!-- ANALYTICS 3 -->
+                <div class="item online">
+                    <div class="icon">
+                        <!-- icon -->
+                        <i class="uil uil-shopping-cart"></i>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>SUBSRIBERS</h3>
+                            <small class="text-muted">Last 24 Hrs</small>
+                        </div>
+                        <h5 class="danger">-12%</h5>
+                        <h3>2212</h3>
+
+                    </div>
+
+                </div>
+                <div class="item add-product">
+                    <div>
+                        <!-- icon -->
+                        <h3>Add Course</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- ============== ENROLLS ANALYTICS END============== -->
+
+        </div>
+        <!-- ============== RIGHT END============== -->
+    </div>
+
+    <!-- ======================  ASIDE END ====================== -->
+    <!-- ======================  ASIDE START ====================== -->
+
+    <!-- ======================  ASIDE END ====================== -->
+    <!-- ======================  FOOTER START ====================== -->
+    <footer>
+        <div class="container footer__container">
+            <div class="footer__1">
+                <a href="index.html" class="footer__logo">
+                    <h4>LOGO</h4>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga autem odio aut illo rem! Ex.</p>
+            </div>
+            <div class="footer__2">
+                <h4>PermaLinks</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__3">
+                <h4>Privacy</h4>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">REfund Policy</a></li>
+            </div>
+            <div class="footer__4">
+                <h4>Contact Us</h4>
+                <div>
+                    <p>Address.......</p>
+                    <p>Number.......</p>
+                </div>
+                <ul class="footer__socials">
+                    <li><a href="#"><i class="uil uil-facebook"></i></a></li>
+                    <li><a href="#"><i class="uil uil-twitter"></i></a></li>
+                    <li><a href="#"><i class="uil uil-linkedin"></i></a></li>
+                    <li><a href="#"><i class="uil uil-instagram-alt"></i></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="footer__copyright">
+            <small>Copyright &copy: Neha</small>
+        </div>
+    </footer>
+    <!-- ======================  FOOTER END ====================== -->
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
